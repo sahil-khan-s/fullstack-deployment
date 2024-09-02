@@ -6,9 +6,9 @@ const app = express();
 
 // Allow all origins
 app.use(cors({
-    origin: true, // This allows all origins
-    methods: ['GET', 'POST', 'DELETE', 'PUT'], // Specify allowed methods
-    credentials: true // Allow credentials if needed (e.g., cookies)
+    origin: true, 
+    methods: ['GET', 'POST', 'DELETE', 'PUT'], 
+    credentials: true 
 }));
 
 // Middleware to parse JSON requests

@@ -98,7 +98,7 @@ const UserList = () => {
                     <td className="py-2 px-4 border-b">
                         <button
                             onClick={() => handleDeleteUser(user.id)}
-                            className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600"
+                            className="bg-red-500 text text-white  py-1 px-3 rounded hover:bg-red-600"
                         >
                             Delete
                         </button>
