@@ -5,7 +5,7 @@ const router = express.Router();
 const userController = require('../controllers/userControlller');
 
 router.get('/', userController.getUsers);
-router.post('/api/users', async (req, res) => {
+router.post('/', async (req, res) => {  // Corrected route definition
     try {
         const { name, email } = req.body;
         const newUser = await addUser(name, email);
