@@ -24,7 +24,7 @@ export const { increment, decrement, setUsers } = counterSlice.actions;
 
 export const fetchUsers = () => async (dispatch) => {
     try {
-        const response = await fetch('https://fullstack-deployment-2.onrender.com/api/users'); // Correct path to fetch users
+        const response = await fetch('https://friendly-l13s.onrender.com/api/users'); // Correct path to fetch users
         const data = await response.json();
         console.log(data , "users")
         dispatch(setUsers(data));
@@ -35,7 +35,7 @@ export const fetchUsers = () => async (dispatch) => {
 
 export const addUser = (name, email) => async (dispatch) => {
     try {
-        const response = await fetch('https://fullstack-deployment-2.onrender.com/api/users', {
+        const response = await fetch('https://friendly-l13s.onrender.com/api/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export const addUser = (name, email) => async (dispatch) => {
 
 export const deleteUser = (id) => async (dispatch) => {
     try {
-        await fetch(`https://fullstack-deployment-2.onrender.com/api/users/${id}`, { // Correct path to delete user
+        await fetch(`https://friendly-l13s.onrender.com/api/users/${id}`, { // Correct path to delete user
             method: 'DELETE',
         });
         dispatch(fetchUsers()); // Refresh users list after deletion
