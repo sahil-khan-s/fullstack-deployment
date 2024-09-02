@@ -5,7 +5,7 @@ const userRoutes = require('./routes/userRoutes');
 
 // Create Express app
 const app = express();
-FRONTEND_URL = "https://fullstack-deployment-2.onrender.com/"
+FRONTEND_URL = "https://testing-app-l3bc.onrender.com/"
 // Environment-specific settings
 const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:3000';
 
