@@ -8,7 +8,9 @@
     "build": "vite build",
     "start": "vite preview",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "migrate": "prisma migrate deploy"
+
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",

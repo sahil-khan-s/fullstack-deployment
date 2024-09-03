@@ -8,6 +8,7 @@ const UserList = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [profile, setProfile] = useState("null");
 
   const handleAddUser = (e) => {
     e.preventDefault(); // Prevent page refresh

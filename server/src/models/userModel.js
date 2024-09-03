@@ -1,16 +1,32 @@
 // File: backend/src/models/userModel.js
 
-const prisma = require('../config/prismaClient'); // Import the prisma client
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+
+async function fetchUsers() {
+  const users = await prisma.user.findMany();
+  console.log('Users:', users);
+}
+
+fetchUsers()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
 
 const getUsers = async () => {
     return await prisma.user.findMany(); // Fetch all users
 };
 
 const addUser = async (name, email) => {
-    return await prisma.user.add({
+    return await prisma.user.create({
         data: {
             name,  
             email, 
+            
         },
     });
 };

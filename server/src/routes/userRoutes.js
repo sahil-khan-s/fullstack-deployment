@@ -1,20 +1,12 @@
 // File: backend/src/routes/userRoutes.js
-
+// Corrected userRoutes.js
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/userControlller');
+const userController = require('../controllers/userControlller'); // Fixed typo here
 
 router.get('/', userController.getUsers);
-router.post('/', async (req, res) => {  // Corrected route definition
-    try {
-        const { name, email } = req.body;
-        const newUser = await addUser(name, email);
-        res.status(201).json(newUser);
-    } catch (error) {
-        console.error('Error in backend:', error.message);
-        res.status(500).json({ message: 'Internal Server Error' });
-    }
-});
-router.delete('/:id', userController.deleteUser); // Delete user route
+router.post('/', userController.addUser); // Use controller method directly
+router.delete('/:id', userController.deleteUser); 
 
 module.exports = router;
+

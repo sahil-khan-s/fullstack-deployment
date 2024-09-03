@@ -1,5 +1,4 @@
-// File: backend/src/controllers/userController.js
-
+// userController.js
 const userModel = require('../models/userModel');
 
 const getUsers = async (req, res) => {
@@ -11,15 +10,21 @@ const getUsers = async (req, res) => {
     }
 };
 
+
 const addUser = async (req, res) => {
     try {
         const { name, email } = req.body;
-        const newUser = await userModel.addUser(name, email);
+        
+        const profile = "null"
+
+        const newUser = await userModel.addUser(name, email , profile );
+        console.log(newUser , "useeeerrrrrrrrrr")
         res.status(201).json(newUser);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
+
 
 const deleteUser = async (req, res) => {
     try {
