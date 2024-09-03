@@ -7,6 +7,7 @@ async function fetchUsers() {
   const users = await prisma.user.findMany();
   console.log('Users:', users);
 }
+console.log("Database URL:", process.env.DATABASE_URL);
 
 fetchUsers()
   .catch((e) => {
