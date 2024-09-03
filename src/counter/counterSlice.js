@@ -18,7 +18,7 @@ export const { increment, decrement, setUsers } = counterSlice.actions;
 // Thunks in your Redux slice (e.g., counterSlice.js)
 export const addUser = (name, email) => async (dispatch) => {
     try {
-        const response = await fetch('https://friendly-l13s.onrender.com/api/users', { // Corrected URL
+        const response = await fetch('https://vite-server-va0p.onrender.com/api/users', { // Corrected URL
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ export const addUser = (name, email) => async (dispatch) => {
 
 export const fetchUsers = () => async (dispatch) => {
     try {
-        const response = await fetch('https://friendly-l13s.onrender.com/api/users'); // Corrected URL
+        const response = await fetch('https://vite-server-va0p.onrender.com/api/users'); // Corrected URL
         const data = await response.json();
         console.log(data, "users"); // Debugging log to check the fetched data
         if (Array.isArray(data)) {
@@ -58,7 +58,7 @@ export const fetchUsers = () => async (dispatch) => {
 
 export const deleteUser = (id) => async (dispatch) => {
     try {
-        await fetch(`https://friendly-l13s.onrender.com/api/users/${id}`, { // Corrected URL
+        await fetch(`https://vite-server-va0p.onrender.com/api/users/${id}`, { // Corrected URL
             method: 'DELETE',
         });
         dispatch(fetchUsers()); // Refresh users list after deletion
